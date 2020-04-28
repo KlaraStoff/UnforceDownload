@@ -1,0 +1,13 @@
+{
+    "name": "UnforceDownload",
+    "version": "1.0",
+    "description": "fuck you forced-download",
+    "permissions": ["webRequest",
+    "webRequestBlocking",
+    "*://*/*?forcedownload=1"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+       },
+    "manifest_version": 2
+}
