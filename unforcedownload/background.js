@@ -1,9 +1,5 @@
-var url = '';
-var res = '';
 var callbackOnRequest = function(info) {
-    url = info.url;
-    res = url.replace("?forcedownload=1", "");
-    return {redirectUrl: res};
+    return {redirectUrl: info.url.replace("?forcedownload=1", "")};
 }
 var filters = {
     urls: ["*://*/*?forcedownload=1"]
