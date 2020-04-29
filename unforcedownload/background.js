@@ -1,8 +1,3 @@
-var callbackOnRequest = function(info) {
+chrome.webRequest.onBeforeRequest.addListener(function(info) {
     return {redirectUrl: info.url.replace("?forcedownload=1", "")};
-}
-var filters = {
-    urls: ["*://*/*?forcedownload=1"]
-}
-var extraInfoSpec = ["blocking"];
-chrome.webRequest.onBeforeRequest.addListener(callbackOnRequest, filters, extraInfoSpec);
+}, {urls: ["*://*/*?forcedownload=1"]}, ["blocking"]);
